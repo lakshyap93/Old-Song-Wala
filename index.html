@@ -421,6 +421,29 @@
       }
     }
 
+  
+    /* MOBILE: preserve Spotify's compact progress/transport bar */
+    @media (max-width: 700px) {
+      .spotify-container {
+        width: 100%;
+        overflow: visible;
+      }
+
+      .spotify-glass {
+        width: 100%;
+        padding: 5px;
+        overflow: hidden;
+      }
+
+      .spotify-glass iframe {
+        display: block;
+        width: 100% !important;
+        height: 152px !important;
+        min-height: 152px !important;
+        border-radius: 14px;
+      }
+    }
+
   </style>
 </head>
 

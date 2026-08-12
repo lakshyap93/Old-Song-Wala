@@ -392,6 +392,35 @@
         transition: none;
       }
     }
+  
+    /* MOBILE SPOTIFY PLAYLIST MODE */
+    @media (max-width: 700px) {
+      .spotify-container {
+        width: 100%;
+        margin-top: 32px;
+      }
+
+      .spotify-glass {
+        padding: 5px;
+        border-radius: 18px;
+      }
+
+      .spotify-glass iframe {
+        display: block;
+        width: 100%;
+        height: 352px !important;
+        min-height: 352px !important;
+        border-radius: 14px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .spotify-glass iframe {
+        height: 330px !important;
+        min-height: 330px !important;
+      }
+    }
+
   </style>
 </head>
 

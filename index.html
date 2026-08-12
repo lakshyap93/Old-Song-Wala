@@ -182,8 +182,9 @@
       transition: opacity 0.35s ease;
     }
 
+    
     /* =========================
-       SPOTIFY
+       SPOTIFY CARD
     ========================== */
     .spotify-container {
       width: min(820px, 100%);
@@ -191,35 +192,75 @@
     }
 
     .player-label {
-      margin: 0 0 9px 14px;
-
+      margin: 0 0 10px 14px;
       font-family: Arial, sans-serif;
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255, 235, 202, 0.68);
+      color: rgba(255, 235, 202, 0.72);
     }
 
     .spotify-glass {
       width: 100%;
-      padding: 8px;
-
+      padding: 7px;
       border-radius: 24px;
-      background: rgba(30, 22, 17, 0.84);
-      border: 1px solid rgba(255, 235, 200, 0.2);
-
+      background: rgba(24, 19, 16, 0.92);
+      border: 1px solid rgba(255, 235, 200, 0.22);
       box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.55),
+        0 24px 65px rgba(0, 0, 0, 0.58),
         inset 0 1px rgba(255, 255, 255, 0.08);
+      overflow: hidden;
     }
 
     .spotify-glass iframe {
       display: block;
       width: 100%;
-      height: 152px;
+      height: 352px;
       border: 0;
       border-radius: 17px;
     }
+
+    @media (min-width: 701px) {
+      .spotify-glass iframe {
+        height: 152px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .spotify-container {
+        width: 100%;
+        margin-top: 32px;
+      }
+
+      .player-label {
+        margin-left: 8px;
+        margin-bottom: 9px;
+        font-size: 8px;
+        letter-spacing: 2.2px;
+      }
+
+      .spotify-glass {
+        padding: 5px;
+        border-radius: 20px;
+      }
+
+      /* Tall playlist embed: Spotify gets room for track list + its native
+         player/transport UI on supported devices. */
+      .spotify-glass iframe {
+        width: 100%;
+        height: 610px;
+        min-height: 610px;
+        border-radius: 15px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .spotify-glass iframe {
+        height: 560px;
+        min-height: 560px;
+      }
+    }
+
 
     /* =========================
        FOOTER
@@ -386,39 +427,6 @@
         transition: none;
       }
     }
-  
-    /* =========================================================
-       MOBILE SPOTIFY — dedicated playlist layout
-       ========================================================= */
-    @media (max-width: 700px) {
-      .spotify-container {
-        width: 100%;
-        margin-top: 32px;
-      }
-
-      .spotify-glass {
-        width: 100%;
-        padding: 5px;
-        border-radius: 18px;
-        overflow: hidden;
-      }
-
-      .spotify-glass iframe {
-        display: block;
-        width: 100% !important;
-        height: 352px !important;
-        min-height: 352px !important;
-        border-radius: 14px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .spotify-glass iframe {
-        height: 330px !important;
-        min-height: 330px !important;
-      }
-    }
-
   </style>
 </head>
 
@@ -455,6 +463,7 @@
     </section>
 
     <section class="spotify-container">
+
       <div class="player-label">
         Now playing · Old is Gold
       </div>
@@ -467,6 +476,7 @@
           loading="lazy">
         </iframe>
       </div>
+
     </section>
 
     <footer class="footer">
